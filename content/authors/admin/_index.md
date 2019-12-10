@@ -57,8 +57,8 @@ user_groups:
 - Visitors
 ---
 
-CamemBERT is a state-of-the-art language model for French based on the [RoBERTa architecture](https://ai.facebook.com/blog/roberta-an-optimized-method-for-pretraining-self-supervised-nlp-systems/) pre-trained on the French subcorpus of the newly available multilingual corpus [OSCAR](https://traces1.inria.fr/oscar/).
+CamemBERT is a state-of-the-art language model for French based on the [RoBERTa architecture](https://ai.facebook.com/blog/roberta-an-optimized-method-for-pretraining-self-supervised-nlp-systems/) pretrained on the French subcorpus of the newly available multilingual corpus [OSCAR](https://traces1.inria.fr/oscar/).
 
 We evaluate CamemBERT in four different downstream tasks for French: part-of-speech (POS) tagging, dependency parsing, named entity recognition (NER) and natural language inference (NLI); improving the state of the art for most tasks over previous monolingual and multilingual approaches, which confirms the effectiveness of large pretrained language models for French.
 
-CamemBERT was trained and evaluated by [Louis Martin](https://github.com/louismartin), [Benjamin Muller](https://benjamin-mlr.github.io), [Pedro Javier Ortiz Suárez](https://pjortiz.com), [Yoann Dupont](https://github.com/YoannDupont), [Laurent Romary](https://cv.archives-ouvertes.fr/laurentromary), [Éric Villemonte de la Clergerie](http://alpage.inria.fr/~clerger/), [Djame Seddah](http://pauillac.inria.fr/~seddah/) and [Benoît Sagot](http://alpage.inria.fr/~sagot/).
+CamemBERT was trained and evaluated by [Louis Martin](https://github.com/louismartin), [Benjamin Muller](https://benjamin-mlr.github.io), [Pedro Javier Ortiz Suárez](https://pjortiz.com), [Yoann Dupont](https://github.com/YoannDupont), [Laurent Romary](https://cv.archives-ouvertes.fr/laurentromary), [Éric Villemonte de la Clergerie](http://alpage.inria.fr/~clerger/), [Djamé Seddah](http://pauillac.inria.fr/~seddah/) and [Benoît Sagot](http://alpage.inria.fr/~sagot/).

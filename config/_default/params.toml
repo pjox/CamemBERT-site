@@ -85,7 +85,7 @@ edit_page = {repo_url = "https://github.com/gcushen/hugo-academic", repo_branch 
 ############################
 
 # Enter contact details (optional). To hide a field, clear it to "".
-email = "pedro.ortiz@inria.fr"
+email = "camembert@inria.fr"
 phone = ""
 
 # Address
@@ -121,7 +121,7 @@ contact_links = [
 ############################
 
 # Default image for social sharing and search engines. Place image in `static/img/` folder and specify image name here.
-sharing_image = ""
+sharing_image = "CamemBERT.png"
 
 # Twitter username (without @). Used when a visitor shares your site on Twitter.
 twitter = "InriaParisNLP"

@@ -47,7 +47,7 @@ subtitle = ""
  css_class = ""
 +++
 
-## Pre-trained models
+## Pretrained model
 
 | Model       | #params | vocab size | Download                                                                                 |
 | ----------- | ------- | ---------- | ---------------------------------------------------------------------------------------- |
