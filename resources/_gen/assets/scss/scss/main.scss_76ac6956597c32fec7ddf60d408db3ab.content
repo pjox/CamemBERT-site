@@ -7147,7 +7147,7 @@ a.text-dark:hover, a.text-dark:focus {
  *  Academic's Core
  **************************************************/
 html {
-  font-family: Roboto, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 16.17px;
   color: rgba(0, 0, 0, 0.8);
   line-height: 1.65; }
@@ -7167,7 +7167,7 @@ body {
   padding-top: 0;
   counter-reset: captions; }
 
-@media screen and (max-width: 1200px) {
+@media (max-width: 991.98px) {
   /* Match max-width of .nav-bar query. */
   body {
     margin-top: 50px;
@@ -7201,14 +7201,14 @@ ul.task-list li input[type="checkbox"] {
 
 /* Navigation bar text */
 .navbar-light {
-  font-family: Roboto, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   line-height: 1.25;
   text-rendering: optimizeLegibility; }
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-  font-family: Montserrat, sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 400;
   margin-top: 1rem;
   margin-bottom: .5rem;
@@ -7284,7 +7284,7 @@ figcaption.numbered {
 
 pre,
 code {
-  font-family: Roboto Mono, monospace;
+  font-family: "Roboto Mono", monospace;
   color: #c7254e;
   background-color: #f9f2f4; }
 
@@ -7444,7 +7444,7 @@ footer a.back-to-top i {
   color: rgba(0, 0, 0, 0.54); }
 
 .dark site-footer,
-.dark footer a#back_to_top i,
+.dark footer a.back-to-top i,
 .dark .docs .body-footer {
   color: rgba(255, 255, 255, 0.54); }
 
@@ -7683,7 +7683,7 @@ div.alert a {
   .navbar .dropdown-menu {
     font-size: 16.17px; }
   .navbar .dropdown-item.active,
-  .navbar .i18n-active {
+  .navbar .dropdown-item-active {
     font-weight: bold;
     color: #2962ff !important; }
 
@@ -7703,13 +7703,15 @@ div.alert a {
 @media (max-width: 991.98px) {
   /* Match breakpoint for i18n dropdown in navbar.html. */
   .i18n-dropdown .nav-link::after {
-    content: none; }
-  .i18n-dropdown .dropdown-menu {
-    /* Use style from uncollapsable dropdowns to prevent dropdown going off page. */
-    position: absolute;
-    /* Below style from .dropdown-menu-right to prevent dropdown going off page. */
-    right: 0;
-    left: auto; } }
+    content: none; } }
+
+.i18n-dropdown .dropdown-menu,
+.theme-dropdown .dropdown-menu {
+  /* Use style from uncollapsable dropdowns to prevent dropdown going off page. */
+  position: absolute;
+  /* Below style from .dropdown-menu-right to prevent dropdown going off page. */
+  right: 0;
+  left: auto; }
 
 /*
 .navbar .collapse {
