@@ -9,7 +9,7 @@ authors:
 - Éric Villemonte de la Clergerie
 - Djamé Seddah
 - Benoît Sagot
-date: "2019-11-10T10:46:37Z"
+date: "2020-07-05T10:46:37Z"
 doi: ""
 
 # Schedule page publish date (NOT publication's date).
@@ -34,25 +34,27 @@ tags:
 featured: true
 
 links:
-#- name: Workshop
-#  url: http://corpora.ids-mannheim.de/cmlc-2019.html
-#- name: HAL
-#  url: https://hal.inria.fr/hal-02148693
-#url_pdf: http://corpora.ids-mannheim.de/CMLC7-final/CMLC-7_2019-Oritz_et_al.pdf
+- name: arXiv
+  url: https://arxiv.org/abs/1911.03894/
+- name: ACL 2020
+  url: https://acl2020.org/
+- name: HAL
+  url: https://hal.inria.fr/hal-02445946
+url_pdf: https://arxiv.org/pdf/1911.03894.pdf
 #url_code: 'https://github.com/pjox/goclassy'
-#url_dataset: 'https://traces1.inria.fr/oscar/'
+url_dataset: 'https://oscar-corpus.com'
 #url_poster: '#'
 #url_project: ''
-#url_slides: ''
+#url_slides: '/files/CMLC_7_slides.pdf'
 #url_source: '#'
 #url_video: '#'
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
-#image:
-#  caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/pLCdAaMFLTE)'
-#  focal_point: ""
-#  preview_only: false
+image:
+ caption: 'Image credit: [**Alix Chagué**](https://alix-tz.github.io/en/index.html)'
+ focal_point: ""
+ preview_only: false
 
 # Associated Projects (optional).
 #   Associate this publication with one or more of your projects.
