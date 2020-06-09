@@ -9,6 +9,10 @@ authors:
 - Éric Villemonte de la Clergerie
 - Djamé Seddah
 - Benoît Sagot
+author_notes:
+- "Equal contribution"
+- "Equal contribution"
+- "Equal contribution"
 date: "2020-07-05T10:46:37Z"
 doi: ""
 
@@ -32,7 +36,6 @@ summary: We release CamemBERT a Tasty French Language Model. CamemBERT is traine
 
 tags:
 featured: true
-
 links:
 - name: arXiv
   url: https://arxiv.org/abs/1911.03894/

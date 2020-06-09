@@ -3,12 +3,16 @@ title: "Les modèles de langue contextuels Camembert pour le Français : impact 
 authors:
 - Louis Martin 
 - Benjamin Muller
-- admin
+- Pedro Javier Ortiz Suárez
 - Yoann Dupont
 - Laurent Romary
 - Éric de la Clergerie
 - Benoît Sagot
 - Djamé Seddah
+author_notes:
+- "Equal contribution"
+- "Equal contribution"
+- "Equal contribution"
 date: "2020-06-08T00:00:00Z"
 doi: ""
 
@@ -25,7 +29,7 @@ publication_types: ["1"]
 publication: In *La 27e conférence sur le Traitement Automatique des Langues Naturelles*
 publication_short: In *TALN 2020*
 
-abstract: Contextual word embeddings have become ubiquitous in Natural Language Processing. Until recently, most available models were trained on English data or on the concatanation of corpora in multiple languages. This made the practical use of models in all languages except English very limited. The recent release of monolingual versions of BERT (Devlin et al., 2019) for French established a new state-of-the-art for all evaluated tasks. In this paper, based on experiments on CamemBERT (Martin et al., 2019), we show that pretraining such models on highly variable datasets leads to better downstream performance compared to models trained on more uniform data. Moreover, we show that a relatively small amount of web crawled data (4GB) leads to downstream performances as good as a model pretrained on a corpus two orders of magnitude larger (138GB).
+abstract: Contextual word embeddings have become ubiquitous in Natural Language Processing. Until recently, most available models were trained on English data or on the concatenation of corpora in multiple languages. This made the practical use of models in all languages except English very limited. The recent release of monolingual versions of BERT (Devlin et al., 2019) for French established a new state-of-the-art for all evaluated tasks. In this paper, based on experiments on CamemBERT (Martin et al., 2019), we show that pretraining such models on highly variable datasets leads to better downstream performance compared to models trained on more uniform data. Moreover, we show that a relatively small amount of web crawled data (4GB) leads to downstream performances as good as a model pretrained on a corpus two orders of magnitude larger (138GB).
 
 # Summary. An optional shortened abstract.
 summary: We explore the impact of the training data size and heterogeneity on French language modeling.
@@ -35,9 +39,13 @@ featured: true
 links:
 - name: TALN 2020
   url: https://jep-taln2020.loria.fr/
-#url_pdf: https://ids-pub.bsz-bw.de/frontdoor/deliver/index/docId/9021/file/Suarez_Sagot_Romary_Asynchronous_Pipeline_for_Processing_Huge_Corpora_2019.pdf
+- name: HAL
+  url: https://hal.archives-ouvertes.fr/hal-02784755
+- name: Website
+  url: https://camembert-model.fr/
+url_pdf: https://jep-taln2020.loria.fr/wp-content/uploads/JEP-TALN-RECITAL-2020_paper_151.pdf
 #url_code: 'https://github.com/pjox/goclassy'
-#url_dataset: 'https://oscar-corpus.com'
+url_dataset: 'https://oscar-corpus.com'
 #url_poster: '#'
 #url_project: ''
 #url_slides: '/files/CMLC_7_slides.pdf'
