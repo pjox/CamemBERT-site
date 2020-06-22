@@ -37,13 +37,15 @@ summary: We release CamemBERT a Tasty French Language Model. CamemBERT is traine
 tags:
 featured: true
 links:
+- name: ACL Anthology
+  url: https://www.aclweb.org/anthology/2020.acl-main.645/
 - name: arXiv
   url: https://arxiv.org/abs/1911.03894/
 - name: ACL 2020
   url: https://acl2020.org/
 - name: HAL
   url: https://hal.inria.fr/hal-02445946
-url_pdf: https://arxiv.org/pdf/1911.03894.pdf
+url_pdf: https://www.aclweb.org/anthology/2020.acl-main.645.pdf
 #url_code: 'https://github.com/pjox/goclassy'
 url_dataset: 'https://oscar-corpus.com'
 #url_poster: '#'
