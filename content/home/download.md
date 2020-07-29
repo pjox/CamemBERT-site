@@ -76,16 +76,15 @@ camembert.eval()  # disable dropout (or leave in train mode to finetune)
 ```
 
 ##### Load CamemBERT (for PyTorch 1.0 or custom models):
+Download camembert model
 ```bash
-# Download camembert model
 wget https://dl.fbaipublicfiles.com/fairseq/models/camembert-base.tar.gz
 tar -xzvf camembert-base.tar.gz
 ```
-
+Load the model in fairseq
 ```python
-# Load the model in fairseq
 from fairseq.models.roberta import CamembertModel
-camembert = CamembertModel.from_pretrained('/path/to/camembert')
+camembert = CamembertModel.from_pretrained('./camembert-base')
 camembert.eval()  # disable dropout (or leave in train mode to finetune)
 ```
 
