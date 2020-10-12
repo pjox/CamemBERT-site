@@ -84,7 +84,7 @@ tar -xzvf camembert-base.tar.gz
 Load the model in fairseq
 ```python
 from fairseq.models.roberta import CamembertModel
-camembert = CamembertModel.from_pretrained('./camembert-base')
+camembert = CamembertModel.from_pretrained('./camembert-base/')
 camembert.eval()  # disable dropout (or leave in train mode to finetune)
 ```
 
