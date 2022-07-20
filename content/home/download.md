@@ -55,7 +55,7 @@ CamemBERT is available in [github.com/huggingface/transformers](https://github.c
 
 ## fairseq
 
-<div style="margin: 0 auto; width: 994px;">
+<!-- <div style="margin: 0 auto; width: 994px;"> -->
 
 | Model                          | #params | Download                                                                                                                 | Arch. | Training data                                                 |
 | ------------------------------ | ------- | ------------------------------------------------------------------------------------------------------------------------ | ----- | ------------------------------------------------------------- |
@@ -66,7 +66,7 @@ CamemBERT is available in [github.com/huggingface/transformers](https://github.c
 | `camembert-base-oscar-4gb`     | 110M    | [camembert-base-oscar-4gb.tar.gz](https://dl.fbaipublicfiles.com/fairseq/models/camembert-base-oscar-4gb.tar.gz)         | Base  | Subsample of [OSCAR](https://oscar-corpus.com) (4 GB of text) |
 | `camembert-base-ccnet-4gb`     | 110M    | [camembert-base-ccnet-4gb.tar.gz](https://dl.fbaipublicfiles.com/fairseq/models/camembert-base-ccnet-4gb.tar.gz)         | Base  | Subsample of CCNet (4 GB of text)                             |
 
-</div>
+<!-- </div> -->
 
 ##### Load CamemBERT from torch.hub (PyTorch >= 1.1):
 ```python
