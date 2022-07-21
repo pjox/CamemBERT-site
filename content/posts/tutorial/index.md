@@ -42,14 +42,14 @@ Nous allons nous intéresser à une tâche de classification de séquence: **la 
 
 Nous allons utiliser le dataset MIAM afin d'entraîner et d'évaluer nos modèles sur cette tâche.
 
-Nous travaillerons avec la librairie `transformers` de Hugging-Face 🤗 ainsi que la librairie `pytorch-lightning`
+Nous travaillerons avec la librairie `transformers` de Hugging-Face 🤗 ainsi que la librairie `pytorch-lightning`.
 
 ## Prérequis
 
 - bases en python 
 - bases en machine learning
 
-Ce tutoriel a été conçu dans le cadre des journées [Deep Voice de l'IRCAM](https://www.ircam.fr/agenda/deep-voice-paris/detail) par Roman Castagné, Nathan Godey et Benjamin Muller
+Ce tutoriel a été conçu dans le cadre des journées [Deep Voice de l'IRCAM](https://www.ircam.fr/agenda/deep-voice-paris/detail) par Roman Castagné, Nathan Godey et Benjamin Muller.
 
 
 
@@ -899,7 +899,7 @@ ax.figure.show()
 
 
     
-![png](Blog_CamemBERT_final_files/Blog_CamemBERT_final_56_1.png)
+![png](output_56_2.png)
     
 
 
@@ -917,7 +917,7 @@ ax.figure.show()
 
 
     
-![png](Blog_CamemBERT_final_files/Blog_CamemBERT_final_58_0.png)
+![png](output_57_1.png)
     
 
 
