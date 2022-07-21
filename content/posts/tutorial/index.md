@@ -384,9 +384,11 @@ P(phrase[k] = vocab[i]) = softmax(logits[k])[i]
 
 Pour rappel, la fonction softmax est:
 
-<p align="center">
+<!-- <p align="center">
   <img src="https://drive.google.com/uc?id=15xG4J5XfKg3Lr2D8LxaFpeYMMyX1uGcA" alt="softmax"/>
-</p>
+</p> -->
+
+$$ \text{softmax}(s) = \left( \frac{e^{s_i}}{\sum_k e^{s_k}} \right)_{i\in[|1,K|]} \text{for } s\in \mathbb{R}^K.$$
 
 
 Pour chaque phrase du batch, nous avons donc un vecteur de *logits* par token. Ces vecteurs ont autant de coordonnées qu'il y a de dimensions dans le vocabulaire.
