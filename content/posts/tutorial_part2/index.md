@@ -17,29 +17,24 @@ features:
   math: true
 ---
 
-![png](/img/icon_w_name.png)
+![png](/img/icon-192.png)
 
-Suite à l'introduction sur Camembert disponible [ici](https://docs.google.com/presentation/d/1U059yu_WGUGwY5uqgz9oEB8CacMuasat5xgbYeRw7DA/edit?usp=sharing), il est temps d'une mise en pratique!
+Ce tutoriel a été conçu dans le cadre des journées [Deep Voice de l'IRCAM](https://www.ircam.fr/agenda/deep-voice-paris/detail) par Roman Castagné, Nathan Godey et Benjamin Muller.
 
-Cet atelier présente le modèle de langue CamemBERT et différents cas d'usage dans lesquels son utilisation est pertinente. Nous allons nous intéresser particulièrement au cas de la **classification d'acte de dialogue**.
+Une version du tutoriel en anglais en version pdf slide est disponible [ici](/pdf/hands-on-camembert-tutorial-slides-en.pdf)
 
-Cette mise en pratique se fera en deux parties:
-- **(Partie 1)** **Comprendre** la modélisation du français par Camembert
-- **(Partie 2)** **Fine-tuning** : comment ré-entraîner CamemBERT sur nos données pour répondre à notre tâche de classification d'acte de dialogue?
+Suite à la première partie qui introduis le fonctionnement de CamemBERT en tant que modèle de langue (disponible [ici]({{< relref "posts/tutorial" >}})), nous allons désormais étudier comment entrainer et évaluer (*fine-tuner* pour être précis!) CamemBERT pour notre tâche de classification d'acte de dialogue.
+
 
 # Dans ce Tutoriel:
 
 Ce tutoriel est une introduction au Natural Language Processing et en particulier au modèle de langue de type BERT. 
 
-## Objectifs 
-- Comprendre le fonctionnement du modèle CamemBERT. 
-- Apprendre à construire un modèle pour une tâche spécifique de NLP avec CamemBERT. 
-
 ## Pour cela
 
 Nous allons nous intéresser à une tâche de classification de séquence: **la tâche de prédiction d'acte de dialogue**. 
 
-Nous allons utiliser le dataset MIAM afin d'entraîner et d'évaluer nos modèles sur cette tâche.
+Nous allons utiliser le dataset MIAM (introduis [ici](https://aclanthology.org/2021.emnlp-main.656.pdf)) afin d'entraîner et d'évaluer nos modèles sur cette tâche. 
 
 Nous travaillerons avec la librairie `transformers` de Hugging-Face 🤗 ainsi que la librairie `pytorch-lightning`.
 
@@ -48,7 +43,6 @@ Nous travaillerons avec la librairie `transformers` de Hugging-Face 🤗 ainsi q
 - bases en python 
 - bases en machine learning
 
-Ce tutoriel a été conçu dans le cadre des journées [Deep Voice de l'IRCAM](https://www.ircam.fr/agenda/deep-voice-paris/detail) par Roman Castagné, Nathan Godey et Benjamin Muller.
 
 
 # Partie 2 : *Finetuning* pour la classification de séquences

@@ -1,5 +1,5 @@
 ---
-title: "Hands-on CamemBERT: Une introduction au modèle CamemBERT"
+title: "Hands-on CamemBERT: Une Introduction au Modèle CamemBERT"
 date: "2022-07-06T00:00:02Z"
 authors: 
 - Benjamin Muller
@@ -14,15 +14,16 @@ tags:
 featured: true
 ---
 
-![png](img/icon_w_name.png)
+![png](/img/icon-192.png)
 
-Suite à l'introduction sur Camembert disponible [ici](https://docs.google.com/presentation/d/1U059yu_WGUGwY5uqgz9oEB8CacMuasat5xgbYeRw7DA/edit?usp=sharing), il est temps d'une mise en pratique!
 
-Cet atelier présente le modèle de langue CamemBERT et différents cas d'usage dans lesquels son utilisation est pertinente. Nous allons nous intéresser particulièrement au cas de la **classification d'acte de dialogue**.
+Ce tutoriel a été conçu dans le cadre des journées [Deep Voice de l'IRCAM](https://www.ircam.fr/agenda/deep-voice-paris/detail) par Roman Castagné, Nathan Godey et Benjamin Muller.
 
-Cette mise en pratique se fera en deux parties:
-- **(Partie 1)** **Comprendre** la modélisation du français par Camembert
-- **(Partie 2)** **Fine-tuning** : comment ré-entraîner CamemBERT sur nos données pour répondre à notre tâche de classification d'acte de dialogue?
+
+Une version du tutoriel en anglais en version pdf slide est disponible [ici](/pdf/hands-on-camembert-tutorial-slides-en.pdf)
+
+Cet atelier présente le modèle de langue CamemBERT et différents cas d'usage. Nous allons nous intéresser particulièrement au cas de la **classification d'acte de dialogue**.
+
 
 # Dans ce Tutoriel:
 
@@ -32,22 +33,24 @@ Ce tutoriel est une introduction au Natural Language Processing et en particulie
 - Comprendre le fonctionnement du modèle CamemBERT. 
 - Apprendre à construire un modèle pour une tâche spécifique de NLP avec CamemBERT. 
 
+
 ## Pour cela
 
 Nous allons nous intéresser à une tâche de classification de séquence: **la tâche de prédiction d'acte de dialogue**. 
 
-Nous allons utiliser le dataset MIAM afin d'entraîner et d'évaluer nos modèles sur cette tâche.
+Nous allons utiliser le dataset MIAM (introduis [ici](https://aclanthology.org/2021.emnlp-main.656.pdf)) afin d'entraîner et d'évaluer nos modèles sur cette tâche. 
 
 Nous travaillerons avec la librairie `transformers` de Hugging-Face 🤗 ainsi que la librairie `pytorch-lightning`.
+
+Cette mise en pratique se fera en deux parties:
+- **(Partie 1)** **Comprendre** la modélisation du français par Camembert
+- **(Partie 2)** **Fine-tuning** : comment ré-entraîner CamemBERT sur nos données pour répondre à notre tâche de classification d'acte de dialogue? Pour passer directement à la deuxième partie c'est par [ici]({{< relref "posts/tutorial_part2" >}})
+
 
 ## Prérequis
 
 - bases en python 
 - bases en machine learning
-
-Ce tutoriel a été conçu dans le cadre des journées [Deep Voice de l'IRCAM](https://www.ircam.fr/agenda/deep-voice-paris/detail) par Roman Castagné, Nathan Godey et Benjamin Muller.
-
-
 
 
 La première étape est l'installation et l'importation des librairies utilisées dans la suite de l'atelier. Certaines librairies (torch, numpy, sklearn, ...) sont pré-installées dans l'environnement de Google Colab, nous n'avons donc pas besoin de nous en occuper.
@@ -104,7 +107,7 @@ Schématiquement:
   <img src="https://drive.google.com/uc?id=1Xp8kSTaguhvDuTOUvyYhooVJu53Uxh-T" alt="Camembert Architecture"/>
 </p> -->
 
-![png](detailed_schema.png)
+![png](/img/transformer-schema.png)
 
 
 
@@ -1151,3 +1154,4 @@ if (outputEl) {{
 On distingue quelques groupes (ou *clusters*), mais on se rend bien compte que les représentations du modèle ne permettent pas de classifier correctement les messages selon les labels définis.
 
 Pour découvrir comment *finetuner* un modèle "général" comme CamemBERT sur cette tâche de classification, rendez-vous dans la [deuxième partie]({{< relref "posts/tutorial_part2" >}}) de ce tutoriel.
+
