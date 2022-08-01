@@ -14,7 +14,7 @@ tags:
 featured: true
 ---
 
-![png](/img/icon_w_name.png)
+![png](img/icon_w_name.png)
 
 Suite à l'introduction sur Camembert disponible [ici](https://docs.google.com/presentation/d/1U059yu_WGUGwY5uqgz9oEB8CacMuasat5xgbYeRw7DA/edit?usp=sharing), il est temps d'une mise en pratique!
 
