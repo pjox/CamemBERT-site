@@ -1,5 +1,5 @@
 ---
-title: "Hands-on CamemBERT, partie 2: Entraîner un modèle de langue en français"
+title: "Hands-on CamemBERT, partie 2: Fine-tuner Camembert pour la Classification d'Acte de Dialogue"
 date: "2022-07-06T00:00:01Z"
 authors: 
 - Benjamin Muller
