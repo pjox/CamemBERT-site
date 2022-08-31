@@ -16,7 +16,6 @@ featured: true
 
 ![png](/img/icon-192.png)
 
-
 Ce tutoriel a été conçu dans le cadre des journées [Deep Voice de l'IRCAM](https://www.ircam.fr/agenda/deep-voice-paris/detail) par Roman Castagné, Nathan Godey et Benjamin Muller.
 
 
