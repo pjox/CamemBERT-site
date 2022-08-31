@@ -1,5 +1,5 @@
 ---
-title: "Hands-on CamemBERT, partie 2: Entraîner un modèle de langue en français"
+title: "Hands-on CamemBERT, partie 2: Fine-tuner Camembert pour la Classification d'Acte de Dialogue"
 date: "2022-07-06T00:00:01Z"
 authors: 
 - Benjamin Muller
@@ -12,43 +12,49 @@ categories:
 tags:
 
 featured: true
-
-features:
-  math: true
 ---
 
-![png](/img/icon_w_name.png)
+<!-- Enable mathjax as well as inline math -->
+{{< rawhtml >}}
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+{{< /rawhtml >}}
 
-Suite à l'introduction sur Camembert disponible [ici](https://docs.google.com/presentation/d/1U059yu_WGUGwY5uqgz9oEB8CacMuasat5xgbYeRw7DA/edit?usp=sharing), il est temps d'une mise en pratique!
+![png](/img/icon-192.png)
 
-Cet atelier présente le modèle de langue CamemBERT et différents cas d'usage dans lesquels son utilisation est pertinente. Nous allons nous intéresser particulièrement au cas de la **classification d'acte de dialogue**.
+Ce tutoriel a été conçu dans le cadre des journées [Deep Voice de l'IRCAM](https://www.ircam.fr/agenda/deep-voice-paris/detail) par Roman Castagné, Nathan Godey et Benjamin Muller.
 
-Cette mise en pratique se fera en deux parties:
-- **(Partie 1)** **Comprendre** la modélisation du français par Camembert
-- **(Partie 2)** **Fine-tuning** : comment ré-entraîner CamemBERT sur nos données pour répondre à notre tâche de classification d'acte de dialogue?
+Une version du tutoriel en anglais en version pdf slide est disponible [ici](/pdf/hands-on-camembert-tutorial-slides-en.pdf)
+
+Suite à la [première partie]({{< relref "posts/tutorial" >}}) qui introduit le fonctionnement de CamemBERT en tant que modèle de langue, nous allons désormais étudier comment entrainer et évaluer (*fine-tuner* pour être précis!) CamemBERT pour notre tâche de classification d'acte de dialogue.
+
 
 # Dans ce Tutoriel:
 
 Ce tutoriel est une introduction au Natural Language Processing et en particulier au modèle de langue de type BERT. 
 
-## Objectifs 
-- Comprendre le fonctionnement du modèle CamemBERT. 
-- Apprendre à construire un modèle pour une tâche spécifique de NLP avec CamemBERT. 
-
 ## Pour cela
 
 Nous allons nous intéresser à une tâche de classification de séquence: **la tâche de prédiction d'acte de dialogue**. 
 
-Nous allons utiliser le dataset MIAM afin d'entraîner et d'évaluer nos modèles sur cette tâche.
+Nous allons utiliser le dataset MIAM (introduit [dans cet article](https://aclanthology.org/2021.emnlp-main.656.pdf)) afin d'entraîner et d'évaluer nos modèles sur cette tâche. 
 
-Nous travaillerons avec la librairie `transformers` de Hugging-Face 🤗 ainsi que la librairie `pytorch-lightning`.
+Nous travaillerons avec la librairie [Transformers](https://huggingface.co/docs/transformers/index) de 🤗 Hugging-Face ainsi que la librairie [Pytorch Lightning](https://www.pytorchlightning.ai).
 
 ## Prérequis
 
 - bases en python 
 - bases en machine learning
 
-Ce tutoriel a été conçu dans le cadre des journées [Deep Voice de l'IRCAM](https://www.ircam.fr/agenda/deep-voice-paris/detail) par Roman Castagné, Nathan Godey et Benjamin Muller.
 
 
 # Partie 2 : *Finetuning* pour la classification de séquences
@@ -68,7 +74,7 @@ Notre jeu de données étant relativement petit, nous faisons le choix de tokeni
 Toutes ces opérations ont déjà été faites dans la première partie du notebook, nous réutilisons donc le dataset et la *collate function* `tokenize_batch` afin d'instancier un `DataLoader` qui va fournir les données au modèle en *batch*.
 
 Un batch est un groupe d'exemples donnés au modèle à une étape d'entraînement. La *loss* et les gradients sont calculés et moyennés pour l'ensemble du batch. Cela permet:
-- d'éviter une trop grande variance des gradients utilisés pour la descente de gradients stochastique: en moyennant les gradients, la direction de descente estimée à chaque pas est plus proche de la direction de descente théorique;
+- d'éviter une trop grande variance des gradients utilisés pour la descente de gradient stochastique: en moyennant les gradients, la direction de descente estimée à chaque pas est plus proche de la direction de descente théorique;
 - de profiter de la parallélisation des calculs offerte par les GPUs pour certaines opérations. On peut ainsi observer une inférence plus rapide avec de plus grands batchs pour un même nombre d'exemples total.
 
 
@@ -314,7 +320,7 @@ pd_dataset["validation"][["Dialogue_Act", "Utterance"]].head(40)
     </tr>
   </tbody>
 </table>
-</div>
+<!-- </div>
       <button class="colab-df-convert" onclick="convertToInteractive('df-07cd8a6c-547c-4135-b820-7564ec16305b')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
@@ -389,12 +395,12 @@ pd_dataset["validation"][["Dialogue_Act", "Utterance"]].head(40)
         }
       </script>
     </div>
-  </div>
+  </div> -->
 
 
 
 
-Il est important, surtout avec de petits jeux de données, que le modèle ne voit pas les données dans le même ordre. Pour éviter cela, on utilise l'argument `shuffle` du DataLoader.
+Il est important, en particulier avec les petits jeux de données, que le modèle ne voit pas les données dans le même ordre au fur et à mesure des epochs. Pour éviter cela, on utilise l'argument `shuffle` du DataLoader.
 
 
 ```python
@@ -412,11 +418,11 @@ val_dataloader = DataLoader(
 )
 ```
 
-Une bonne manière de s'assurer que les données sur lesquelles le modèle va s'entraîner sont dans un format correct est de regarder un batch et décoder les indices issus du tokenizer. On retrouve ce à quoi l'on s'attendait : les tokens spéciaux et le padding pour compenser les phrases trop courtes.
+Une bonne manière de s'assurer que les données sur lesquelles le modèle va s'entraîner sont dans un format correct est de regarder un batch et décoder les indices issus du tokenizer. On retrouve des tokens ajoutés : les tokens spéciaux et le padding pour compenser les phrases trop courtes.
 
 On remarque notamment que dans CamemBERT, les séquences utilisent un délimiteur de début de phrase `<s>` et de fin de phrase `</s>`:
 
-```<s>Le chat est sur le matelas.</s>```
+```<s>Le chat est sur le matelas.</s><pad><pad>```
 
 Pour les séquences trop courtes par rapport à d'autres séquences du batch, le tokenizer rajoute un token `<pad>` qui ne sera pas considéré par le modèle.
 
@@ -461,8 +467,8 @@ batch["labels"]
 Nous utilisons PyTorch Lightning, un utilitaire autour de PyTorch qui facilite l'entraînement de modèles de Machine Learning notamment en supprimant les boucles d'entraînement et d'optimisation écrites à la main.
 
 Pour utiliser PL, nous allons "wrapper" notre modèle dans un `LightningModule` et implémenter trois méthodes essentielles :
-- `training_step` prend en entrée les données d'un batch qui sont passées au modèle et retourne la loss du modèle sur ce batch. C'est ici qu'on définit la fonction de *CrossEntropy*.
-- `validation_step` est similaire à `training_step` mais retourne les métriques de validation utilisées (dans notre cas, l'exactitude ou *accuracy*).
+- `training_step` prend en entrée les données d'un batch qui sont passées au modèle et retourne la loss du modèle sur ce batch. C'est ici qu'on définit la fonction de *CrossEntropy*;
+- `validation_step` est similaire à `training_step` mais retourne les métriques de validation utilisées (dans notre cas, l'exactitude ou *accuracy*);
 - `configure_optimizers` retourne l'optimiseur que nous souhaitons utiliser pour l'entraînement. L'un des optimiseurs les plus utilisés avec les modèles Transformers est AdamW, disponible directement dans `torch.optim`. On précise le taux d'apprentissage ou *learning rate* lors de la définition de l'optimiseur.
 
 Le *learning rate* permet d'ajuster la longueur du pas effectué à chaque étape d'optimisation. Un pas trop long peut empêcher la convergence, mais un pas trop court peut allonger le temps d'entraînement, comme le montre ce schéma:
@@ -473,13 +479,11 @@ Le *learning rate* permet d'ajuster la longueur du pas effectué à chaque étap
 ![png](gradient_descent.png)
 
 
-Pour rappel, la fonction cross-entropy est une mesure de divergence entre les prédictions du modèle et les labels observés. La cross-entropy est définie par :
+Pour rappel, la fonction d'entropie croisée (ou *cross entropy* en anglais) est une mesure de divergence entre les prédictions du modèle et les labels observés. Soit $y$ les vrais labels et $\hat{y}$ les scores donnés par le modèle aux vrais labels. L'entropie croisée est définie par :
 
-<!-- $$\text{CE}(y, \hat{y}) = \sum_i y_i \log(\hat{y}_i)$$ -->
+$$\text{CE}(y, \hat{y}) = -\sum_i y_i \log(\hat{y}_i)$$
 
-$$ \text{softmax}(s) = \left( \frac{e^{s_i}}{\sum_k e^{s_k}} \right)_{i\in[|1,K|]} \text{for } s\in \mathbb{R}^K.$$
 
-Texte et tout
 
 <!-- <p align="center">
   <img src="https://drive.google.com/uc?id=1qtyaBx7EXgz7ATeQ4hnEFip-8EWJbb9l" alt="ce"/>
@@ -573,12 +577,14 @@ Pour suivre l'avancement de l'entraînement du modèle, il est d'usage d'utilise
 
 ## Lancer l'entraînement
 
-Avec PyTorch Lightning, pas besoin de boucle d'entraînement écrite à la main comme avec PyTorch, le Trainer se charge de sélectionner les GPUs, s'arrêter au bon nombre d'epochs, et de nombreuses autres options. Si vous avez besoin d'une fonctionnalité spéciale, il y a de grandes chances que celle-ci soit déjà implémentée dans Pytorch Lightning.
+Avec PyTorch Lightning, plus besoin de boucle d'entraînement écrite à la main comme avec PyTorch. 
+
+En effet, le Trainer se charge de sélectionner les GPUs, s'arrêter au bon nombre d'epochs, et de nombreuses autres options. Si vous avez besoin d'une fonctionnalité spéciale, il y a de grandes chances que celle-ci soit déjà implémentée dans Pytorch Lightning.
 
 Cependant, l'entraînement de modèles de Deep Learning demande de connaître quelques termes techniques, nous allons décrire ceux que vous pourrez croiser dans ce notebook ici :
-- **epochs**: une passe sur toutes les données d'entraînement. Si l'on fait 15 epochs, le modèle aura "vu" 15 fois les données.
-- **early stopping**: technique qui consiste à arrêter l'entraînement du modèle lorsqu'une métrique (généralement la loss ou l'accuracy sur les données de validation) arrête de diminuer ou augmenter. Cela permet d'éviter l'overfitting, c'est à dire une mémorisation des données d'entraînement au détriment de la généralisation du modèle sur de nouvelles données. La **patience** spécifie combien d'epochs attendre avant de stopper l'entraînement si la métrique n'a toujours pas été améliorée.
-- **model checkpoints**: des sauvegardes du modèle au fur et à mesure de l'entraînement. Ici, on demande à PytorchLightning de sauver le meilleur modèle par rapport à l'exactitude sur les données de validation.
+- **epochs :** une passe sur toutes les données d'entraînement. Si l'on fait 15 epochs, le modèle aura "vu" 15 fois les données ;
+- **early stopping :** technique qui consiste à arrêter l'entraînement du modèle lorsqu'une métrique (généralement la loss ou l'accuracy sur les données de validation) arrête de diminuer ou augmenter. Cela permet d'éviter l'overfitting, c'est à dire une mémorisation des données d'entraînement au détriment de la généralisation du modèle sur de nouvelles données. La **patience** spécifie combien d'epochs attendre avant de stopper l'entraînement si la métrique n'a toujours pas été améliorée ;
+- **model checkpoints :** des sauvegardes du modèle au fur et à mesure de l'entraînement. Ici, on demande à PytorchLightning de sauver le meilleur modèle par rapport à l'exactitude sur les données de validation. Ces *checkpoints* sont ensuite utilisés pour relancer l'entraînement en cas d'arrêt prématuré, ou pour sauvegarder la meilleure version de notre modèle.
 
 
 ```python
@@ -628,7 +634,7 @@ camembert_trainer.fit(lightning_model, train_dataloaders=train_dataloader, val_d
 
 
 
-Récupérons le meilleur modèle sauvé par le *callback* `ModelCheckpoint`. Autrement, le modèle a toujours les derniers poids issus de l'optimisation, qui ne donnent pas forcément la meilleure valeur de la métrique.
+Récupérons le meilleur modèle sauvé par l'utilitaire `ModelCheckpoint` de Pytorch Lightning. Autrement, le modèle possède toujours les derniers paramètres issus de l'optimisation, qui ne correspondent pas forcément à la meilleure valeur de la métrique.
 
 
 ```python
@@ -642,7 +648,7 @@ lightning_model = LightningModel.load_from_checkpoint(checkpoint_path=model_chec
     You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
 
 
-### Notebook checkpoint
+### 🚧 Notebook checkpoint
 
 Si jamais vous n'avez pas pu entraîner le modèle ci dessus, vous pouvez en télécharger une version similaire sauvegardée sur le Hub d'HuggingFace :
 
@@ -814,7 +820,9 @@ def plot_confusion_matrix(labels, preds, label_names):
     )
 ```
 
-Sur le graphe suivant, chaque ligne correspond au vrai label, chaque colonne au label prédit. Par exemple, le modèle camembert a bien prédit le label "ack" dans la plupart des cas, mais le confond régulièrement avec le label "yes". En revanche, le label "kindatt" est tout le temps confondu avec "ack".
+Sur le graphe suivant, chaque ligne correspond au vrai label, chaque colonne au label prédit. Par exemple, le modèle camembert a bien prédit le label "ack" dans la plupart des cas, mais le confond régulièrement avec le label "yes". En revanche, le label "kindatt" est tout le temps confondu avec "ack" - il est probablement trop peu présent dans les données d'entraînement pour être vraiment "appris" par le modèle.
+
+Ces matrices de confusion sont un outil précieux : elles permettent de mieux estimer où se situent les erreurs du modèle, pour ensuite pouvoir les corriger.
 
 
 ```python
