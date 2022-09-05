@@ -3,7 +3,7 @@ title: "Les modèles de langue contextuels Camembert pour le Français : impact 
 authors:
 - Louis Martin 
 - Benjamin Muller
-- Pedro Javier Ortiz Suárez
+- Pedro Ortiz Suarez
 - Yoann Dupont
 - Laurent Romary
 - Éric de la Clergerie
