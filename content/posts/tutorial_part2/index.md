@@ -3,8 +3,8 @@ title: "Hands-on CamemBERT, partie 2: Fine-tuner Camembert pour la Classificatio
 date: "2022-07-06T00:00:01Z"
 authors: 
 - Benjamin Muller
-- Nathan Godey
-- Roman Castagné
+- ngodey
+- roman
 categories: 
 - nlp
 - camembert
@@ -33,10 +33,11 @@ featured: true
 
 Ce tutoriel a été conçu dans le cadre des journées [Deep Voice de l'IRCAM](https://www.ircam.fr/agenda/deep-voice-paris/detail) par Roman Castagné, Nathan Godey et Benjamin Muller.
 
-Une version du tutoriel en anglais en version pdf slide est disponible [ici](/pdf/hands-on-camembert-tutorial-slides-en.pdf)
+Une version du tutoriel en anglais en version pdf slide est disponible [ici](/pdf/hands-on-camembert-tutorial-slides-en.pdf), ainsi que le même tutoriel dans [Google Colab](https://colab.research.google.com/drive/1W0Fj7aXm2qPx34PbEo0F5s5_sm8vVrJl?usp=sharing).
 
 Suite à la [première partie]({{< relref "posts/tutorial" >}}) qui introduit le fonctionnement de CamemBERT en tant que modèle de langue, nous allons désormais étudier comment entrainer et évaluer (*fine-tuner* pour être précis!) CamemBERT pour notre tâche de classification d'acte de dialogue.
 
+&nbsp;
 
 # Dans ce Tutoriel:
 
@@ -55,7 +56,7 @@ Nous travaillerons avec la librairie [Transformers](https://huggingface.co/docs/
 - bases en python 
 - bases en machine learning
 
-
+&nbsp;
 
 # Partie 2 : *Finetuning* pour la classification de séquences
 
@@ -460,7 +461,7 @@ batch["labels"]
 
     tensor([ 5,  0,  1,  0, 30,  1,  1, 18,  7,  5,  7,  7,  0, 19,  1,  7])
 
-
+&nbsp;
 
 ## Préparer le modèle
 
@@ -659,6 +660,7 @@ Si jamais vous n'avez pas pu entraîner le modèle ci dessus, vous pouvez en té
 lightning_model = LightningModel("RomanCast/camembert-miam-loria-finetuned", num_labels, lr=3e-5, weight_decay=0.)
 ```
 
+&nbsp;
 
 ## Inférence avec le modèle entraîné
 

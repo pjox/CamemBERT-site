@@ -4,7 +4,7 @@ date: "2022-07-06T00:00:02Z"
 authors: 
 - Benjamin Muller
 - Nathan Godey
-- Roman Castagné
+- roman
 categories: 
 - nlp
 - camembert
@@ -19,10 +19,11 @@ featured: true
 Ce tutoriel a été conçu dans le cadre des journées [Deep Voice de l'IRCAM](https://www.ircam.fr/agenda/deep-voice-paris/detail) par Roman Castagné, Nathan Godey et Benjamin Muller.
 
 
-Une version du tutoriel en anglais en version pdf slide est disponible [ici](/pdf/hands-on-camembert-tutorial-slides-en.pdf)
+Une version du tutoriel en anglais en version pdf slide est disponible [ici](/pdf/hands-on-camembert-tutorial-slides-en.pdf), ainsi que le même tutoriel dans [Google Colab](https://colab.research.google.com/drive/1W0Fj7aXm2qPx34PbEo0F5s5_sm8vVrJl?usp=sharing).
 
 Cet atelier présente le modèle de langue CamemBERT et différents cas d'usage. Nous allons nous intéresser particulièrement au cas de la **classification d'acte de dialogue**.
 
+&nbsp;
 
 # Dans ce Tutoriel:
 
@@ -31,7 +32,6 @@ Ce tutoriel est une introduction au Natural Language Processing et en particulie
 ## Objectifs 
 - Comprendre le fonctionnement du modèle CamemBERT. 
 - Apprendre à construire un modèle pour une tâche spécifique de NLP avec CamemBERT. 
-
 
 ## Pour cela
 
@@ -76,7 +76,7 @@ import plotly.express as px
 from tqdm.notebook import tqdm
 ```
 
-
+&nbsp;
 
 # Partie 1: Comprendre la modélisation du français par **CamemBERT**
 
@@ -195,6 +195,7 @@ display_nb_params(camembert)
 
     Nombre de paramètres: 110655493 | Poids du modèle: 422.13MB
 
+&nbsp;
 
 ## Faire des Prédictions avec CamemBERT en mode modèle de langue
 
