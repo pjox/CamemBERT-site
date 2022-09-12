@@ -2,8 +2,8 @@
 title: "Hands-on CamemBERT: Une Introduction au Modèle CamemBERT"
 date: "2022-07-06T00:00:02Z"
 authors: 
-- Benjamin Muller
-- Nathan Godey
+- bmuller
+- ngodey
 - roman
 categories: 
 - nlp

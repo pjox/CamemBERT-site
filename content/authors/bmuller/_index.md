@@ -1,10 +1,10 @@
 ---
 # Display name
-title: Roman Castagné
+title: Benjamin Muller
 
 # Username (this should match the folder name)
 authors:
-- roman
+- bmuller
 
 # Is this the primary user of the site?
 superuser: true
@@ -20,7 +20,7 @@ organizations:
   url: "https://team.inria.fr/almanach/"
 
 # Short bio (displayed in user profile at end of posts)
-bio: Doctorant dans l'équipe ALMAnaCH d'Inria, je travaille sur la tokenization et les modèles de langue multilingues.
+bio: Doctorant dans l'équipe ALMAnaCH d'Inria.
 
 # Social/Academic Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/widgets/#icons
@@ -32,13 +32,16 @@ social:
 #   link: '#contact'  # For a direct email link, use "mailto:test@example.org".
 - icon: twitter
   icon_pack: fab
-  link: https://twitter.com/RomCast_
+  link: https://twitter.com/ben_mlr
+- icon: comments
+  icon_pack: fas
+  link: https://benjamin-mlr.github.io/
 # - icon: google-scholar
 #   icon_pack: ai
 #   link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
-- icon: github
-  icon_pack: fab
-  link: https://github.com/RomanCast
+# - icon: github
+#   icon_pack: fab
+  # link: https://github.com/RomanCast
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.  
 # - icon: cv
