@@ -57,6 +57,8 @@ CamemBERT is available in [github.com/huggingface/transformers](https://github.c
 
 <div style="margin: 0 auto; width: 994px;">
 
+<!-- For some reasons table were not rendered correctly, this hack (along with the layouts/shortcodes snippet) solves it -->
+{{<table "table table-striped table-bordered">}}
 | Model                          | #params | Download                                                                                                                 | Arch. | Training data                                                 |
 | ------------------------------ | ------- | ------------------------------------------------------------------------------------------------------------------------ | ----- | ------------------------------------------------------------- |
 | `camembert` / `camembert-base` | 110M    | [camembert-base.tar.gz](https://dl.fbaipublicfiles.com/fairseq/models/camembert-base.tar.gz)                             | Base  | [OSCAR](https://oscar-corpus.com) (138 GB of text)            |
@@ -66,6 +68,7 @@ CamemBERT is available in [github.com/huggingface/transformers](https://github.c
 | `camembert-base-oscar-4gb`     | 110M    | [camembert-base-oscar-4gb.tar.gz](https://dl.fbaipublicfiles.com/fairseq/models/camembert-base-oscar-4gb.tar.gz)         | Base  | Subsample of [OSCAR](https://oscar-corpus.com) (4 GB of text) |
 | `camembert-base-ccnet-4gb`     | 110M    | [camembert-base-ccnet-4gb.tar.gz](https://dl.fbaipublicfiles.com/fairseq/models/camembert-base-ccnet-4gb.tar.gz)         | Base  | Subsample of CCNet (4 GB of text)                             |
 
+{{</table>}}
 </div>
 
 ##### Load CamemBERT from torch.hub (PyTorch >= 1.1):
