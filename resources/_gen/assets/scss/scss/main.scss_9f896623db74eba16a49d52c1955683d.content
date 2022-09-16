@@ -1787,14 +1787,14 @@ fieldset:disabled a.btn {
     box-shadow: 0 0 0 0.2rem rgba(56, 124, 201, 0.5); }
   .btn-primary.disabled, .btn-primary:disabled {
     color: #fff;
-    background-color: #2962ff;
-    border-color: #2962ff; }
+    background-color: #1565c0;
+    border-color: #1565c0; }
   .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
     color: #fff;
-    background-color: #0041f5;
-    border-color: #003ee8; }
+    background-color: #104d92;
+    border-color: #0f4787; }
     .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .show > .btn-primary.dropdown-toggle:focus {
-      box-shadow: 0 0 0 0.2rem rgba(73, 122, 255, 0.5); }
+      box-shadow: 0 0 0 0.2rem rgba(56, 124, 201, 0.5); }
 
 .btn-secondary {
   color: #fff;
@@ -1978,10 +1978,10 @@ fieldset:disabled a.btn {
     background-color: transparent; }
   .btn-outline-primary:not(:disabled):not(.disabled):active, .btn-outline-primary:not(:disabled):not(.disabled).active, .show > .btn-outline-primary.dropdown-toggle {
     color: #fff;
-    background-color: #2962ff;
-    border-color: #2962ff; }
+    background-color: #1565c0;
+    border-color: #1565c0; }
     .btn-outline-primary:not(:disabled):not(.disabled):active:focus, .btn-outline-primary:not(:disabled):not(.disabled).active:focus, .show > .btn-outline-primary.dropdown-toggle:focus {
-      box-shadow: 0 0 0 0.2rem rgba(41, 98, 255, 0.5); }
+      box-shadow: 0 0 0 0.2rem rgba(21, 101, 192, 0.5); }
 
 .btn-outline-secondary {
   color: #6c757d;
@@ -7483,167 +7483,6 @@ div.alert > div {
 
 div.alert div > * {
   margin-bottom: 0.5rem;
-  /* Use smaller paragraph spacing than usual. */ }
-
-.dark .post-nav-item a {
-  color: #ddd; }
-
-/**************************************************
- *  Tags/Labels
- **************************************************/
-.badge-light {
-  border: none;
-  color: rgba(0, 0, 0, 0.68);
-  background: rgba(0, 0, 0, 0.05);
-  font-weight: normal;
-  border-radius: 3px;
-  padding: 5px 10px;
-  margin-right: 8px;
-  margin-bottom: 8px; }
-
-.article-tags > .badge-light:last-child {
-  margin-right: 0; }
-
-.badge-light[href]:focus,
-.badge-light[href]:hover {
-  background: rgba(0, 0, 0, 0.1); }
-
-a.badge:focus,
-a.badge:hover {
-  color: rgba(0, 0, 0, 0.68); }
-
-.tag-cloud a {
-  display: inline-block;
-  position: relative;
-  margin: 5px 10px;
-  word-wrap: break-word;
-  transition-duration: .2s;
-  transition-property: transform;
-  transition-timing-function: ease-out; }
-
-.tag-cloud a:active,
-.tag-cloud a:focus,
-.tag-cloud a:hover {
-  color: #0041f5;
-  transform: scale(1.2); }
-
-.dark .tag-cloud a:active,
-.dark .tag-cloud a:focus,
-.dark .tag-cloud a:hover {
-  color: #5c87ff; }
-
-/*************************************************
- *  Button size override
- *************************************************/
-.btn {
-  padding: .5rem;
-  font-size: .8rem;
-  line-height: .9;
-  border-radius: .3rem; }
-
-.btn-links .btn {
-  padding: 5px .5rem 5px .5rem;
-  line-height: 1; }
-
-.btn.btn-sm, .btn-group-sm > .btn {
-  padding: 5px .4rem 5px .4rem;
-  font-size: .6rem;
-  border-radius: .2rem; }
-
-/*************************************************
- *  Toolbar Buttons
- **************************************************/
-.btn-toolbar .btn {
-  font-size: 0.9rem;
-  padding: 10px 14px 9px;
-  border: none; }
-
-.btn-toolbar .btn:first-child {
-  border-radius: 6px 0 0 6px; }
-
-.btn-toolbar .btn:last-child {
-  border-radius: 0 6px 6px 0; }
-
-.btn-toolbar .btn.btn-primary:hover,
-.btn-toolbar .btn.btn-primary:focus {
-  background-color: #5c87ff !important; }
-
-.btn-toolbar .btn.btn-primary:active,
-.btn-toolbar .btn.btn-primary.active {
-  background-color: #0041f5 !important; }
-
-.btn-primary:not(:disabled):not(.disabled).active:focus,
-.btn-primary:not(:disabled):not(.disabled):active:focus,
-.show > .btn-primary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem #5c87ff; }
-
-/*************************************************
- *  Tables
- **************************************************/
-/* Based on Bootstrap's `table-responsive` style. */
-table {
-  display: block;
-  width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  margin-bottom: 1rem;
-  font-size: 0.8rem; }
-
-table > thead > tr > th,
-table > tbody > tr > th,
-table > tfoot > tr > th,
-table > thead > tr > td,
-table > tbody > tr > td,
-table > tfoot > tr > td {
-  padding: 8px;
-  line-height: 1.43;
-  vertical-align: top;
-  border-top: 1px solid #ddd; }
-
-table > thead > tr > th {
-  vertical-align: bottom;
-  border-bottom: 2px solid #ddd; }
-
-table > caption + thead > tr:first-child > th,
-table > colgroup + thead > tr:first-child > th,
-table > thead:first-child > tr:first-child > th,
-table > caption + thead > tr:first-child > td,
-table > colgroup + thead > tr:first-child > td,
-table > thead:first-child > tr:first-child > td {
-  border-top: 0; }
-
-table > tbody + tbody {
-  border-top: 2px solid #ddd; }
-
-table table {
-  background-color: #fff; }
-
-/* Table Striped */
-table > tbody > tr:nth-child(odd) > td,
-table > tbody > tr:nth-child(odd) > th {
-  background-color: #f9f9f9; }
-
-/* Table Hover */
-table > tbody > tr:hover > td,
-table > tbody > tr:hover > th {
-  background-color: #e5e5e5; }
-
-/*************************************************
- *  Article Alerts (Shortcode) and Asides (Mmark)
- **************************************************/
-/* Style asides as Bootstrap alerts. */
-/* Asides use <p> block element whereas alerts use <div>. */
-.article-style aside p,
-div.alert > div {
-  position: relative;
-  display: block;
-  font-size: 1rem;
-  margin-left: 2rem;
-  margin-top: 0;
-  margin-bottom: 0; }
-
-div.alert div > * {
-  margin-bottom: .5rem;
   /* Use smaller paragraph spacing than usual. */ }
 
 div.alert div > :last-child {

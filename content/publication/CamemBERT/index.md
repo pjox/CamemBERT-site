@@ -2,8 +2,8 @@
 title: "CamemBERT: a Tasty French Language Model"
 authors:
 - Louis Martin
-- Benjamin Muller
-- Pedro Ortiz Suarez
+- bmuller
+- pedro
 - Yoann Dupont
 - Laurent Romary
 - Éric Villemonte de la Clergerie

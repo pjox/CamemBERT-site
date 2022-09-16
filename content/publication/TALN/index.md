@@ -2,8 +2,8 @@
 title: "Les modèles de langue contextuels Camembert pour le Français : impact de la taille et de l'hétérogénéité des données d'entrainement"
 authors:
 - Louis Martin 
-- Benjamin Muller
-- Pedro Ortiz Suarez
+- bmuller
+- pedro
 - Yoann Dupont
 - Laurent Romary
 - Éric de la Clergerie
