@@ -87,16 +87,10 @@ Re-regardons quelques exemples de phrases issues du jeu de données MIAM. On ret
 
 
 ```python
-pd_dataset["validation"][["Dialogue_Act", "Utterance"]].head(40)
+pd_dataset["validation"][["Dialogue_Act", "Utterance"]].head(20)
 ```
 
-
-
-
-
-  <div id="df-07cd8a6c-547c-4135-b820-7564ec16305b">
-    <div class="colab-df-container">
-      <div>
+{{< rawhtml >}}
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -137,27 +131,27 @@ pd_dataset["validation"][["Dialogue_Act", "Utterance"]].head(40)
     <tr>
       <th>3</th>
       <td>inform</td>
-      <td>Eh bien, il va falloir la fabriquer cette mane...</td>
+      <td>Eh bien, il va falloir la fabriquer cette manette. Allez voir Mélissa, la responsable d' îlot de production, elle va vous aider. Elle doit être dans l' atelier de fabrication.</td>
     </tr>
     <tr>
       <th>4</th>
       <td>ask</td>
-      <td>Mais sinon, vous avez encore des questions sur...</td>
+      <td>Mais sinon, vous avez encore des questions sur l'entreprise ? Le staff de l'entreprise, ou bien les études qu'ils ont fait ?</td>
     </tr>
     <tr>
       <th>5</th>
       <td>staff_enterprise</td>
-      <td>j'ai un peu de temps... allez y dites moi en p...</td>
+      <td>j'ai un peu de temps... allez y dites moi en plus sur l'entreprise, le staff et sur les études de chacun...</td>
     </tr>
     <tr>
       <th>6</th>
       <td>inform</td>
-      <td>la plasturgie, c' est plus une question de log...</td>
+      <td>la plasturgie, c' est plus une question de logique que de force physique. que ce soit pour imaginer les produits de demain comme ici, au bureau d' études, ou pour les créer, comme dans l' atelier, tout le monde y trouve son compte, filles comme garçons Il y a tellement de métiers différents et intéressants.</td>
     </tr>
     <tr>
       <th>7</th>
       <td>ask</td>
-      <td>et vous vouliez savoir quelles études ils avai...</td>
+      <td>et vous vouliez savoir quelles études ils avaient fait c'est ça ?</td>
     </tr>
     <tr>
       <th>8</th>
@@ -167,12 +161,12 @@ pd_dataset["validation"][["Dialogue_Act", "Utterance"]].head(40)
     <tr>
       <th>9</th>
       <td>inform</td>
-      <td>Il y a des métiers pour tout le monde du BEP à...</td>
+      <td>Il y a des métiers pour tout le monde du BEP à l' ingénieur. mais en fait, peu importe le niveau d' études il y a toujours des possibilités d' évolution.</td>
     </tr>
     <tr>
       <th>10</th>
       <td>quit</td>
-      <td>Bon, je dois vous laisser. Bon courage pour la...</td>
+      <td>Bon, je dois vous laisser. Bon courage pour la suite !</td>
     </tr>
     <tr>
       <th>11</th>
@@ -187,17 +181,17 @@ pd_dataset["validation"][["Dialogue_Act", "Utterance"]].head(40)
     <tr>
       <th>13</th>
       <td>next_step</td>
-      <td>est ce que je peux utiliser la manette mainten...</td>
+      <td>est ce que je peux utiliser la manette maintenant ?</td>
     </tr>
     <tr>
       <th>14</th>
       <td>inform</td>
-      <td>Il ne vous reste plus qu' à trouver les compos...</td>
+      <td>Il ne vous reste plus qu' à trouver les composants électroniques pour terminer cette manette. Sophia doit les avoir sur elle, je l' ai vue passer tout à l' heure.</td>
     </tr>
     <tr>
       <th>15</th>
       <td>ask</td>
-      <td>Mais avant de partir, voulez vous faire un min...</td>
+      <td>Mais avant de partir, voulez vous faire un mini quizz avec moi ?</td>
     </tr>
     <tr>
       <th>16</th>
@@ -207,7 +201,7 @@ pd_dataset["validation"][["Dialogue_Act", "Utterance"]].head(40)
     <tr>
       <th>17</th>
       <td>ask</td>
-      <td>Que faudra-t-il faire de votre manette une foi...</td>
+      <td>Que faudra-t-il faire de votre manette une fois qu'elle sera cassée et irréaparable ?</td>
     </tr>
     <tr>
       <th>18</th>
@@ -217,189 +211,11 @@ pd_dataset["validation"][["Dialogue_Act", "Utterance"]].head(40)
     <tr>
       <th>19</th>
       <td>inform</td>
-      <td>tout à fait, on ramène les équipements hors-se...</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>quit</td>
-      <td>J'aurais aimé continuer à répondre à vos quest...</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>greet</td>
-      <td>Bonjour !</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>ask</td>
-      <td>Il faut que tu trouves l' adresse de l' entrep...</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>help</td>
-      <td>Ok, où se trouve cette entreprise?</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>inform</td>
-      <td>Je ne sais pas . . . mon oncle a dit que c' êt...</td>
-    </tr>
-    <tr>
-      <th>25</th>
-      <td>quit</td>
-      <td>Ok, c'est super!</td>
-    </tr>
-    <tr>
-      <th>26</th>
-      <td>greet</td>
-      <td>Bonjour, je suis Preparateur1 le préparateur m...</td>
-    </tr>
-    <tr>
-      <th>27</th>
-      <td>ask</td>
-      <td>Qu'est-ce que je peux faire pour vous?</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>inform_material_space</td>
-      <td>cet endroit m'intéresse, que pouvez vous me di...</td>
-    </tr>
-    <tr>
-      <th>29</th>
-      <td>inform</td>
-      <td>Eh bien quand on reçoit les granulés de matièr...</td>
-    </tr>
-    <tr>
-      <th>30</th>
-      <td>ask</td>
-      <td>vous voulez savoir ce que je fais moi, plus pa...</td>
-    </tr>
-    <tr>
-      <th>31</th>
-      <td>yes</td>
-      <td>oui, ça m'intéresser !</td>
-    </tr>
-    <tr>
-      <th>32</th>
-      <td>inform</td>
-      <td>mon rôle, c' est de m' assurer que les machine...</td>
-    </tr>
-    <tr>
-      <th>33</th>
-      <td>ask</td>
-      <td>Voulez vous en savoir plus?</td>
-    </tr>
-    <tr>
-      <th>34</th>
-      <td>no</td>
-      <td>non, merci, nous devons filer. Mais ce fut pas...</td>
-    </tr>
-    <tr>
-      <th>35</th>
-      <td>ask</td>
-      <td>attendez, ne partez pas si vite, j'ai un petit...</td>
-    </tr>
-    <tr>
-      <th>36</th>
-      <td>yes</td>
-      <td>pas de soucis, je vais vous aider</td>
-    </tr>
-    <tr>
-      <th>37</th>
-      <td>inform</td>
-      <td>ok, c' est parti</td>
-    </tr>
-    <tr>
-      <th>38</th>
-      <td>quit</td>
-      <td>Merci de votre aide, bonne journée à vous !</td>
-    </tr>
-    <tr>
-      <th>39</th>
-      <td>greet</td>
-      <td>Déjà de retour avec les plans ?! Bravo les jeu...</td>
+      <td>tout à fait, on ramène les équipements hors-service au magasin, ils pourront les faire recycler</td>
     </tr>
   </tbody>
 </table>
-<!-- </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-07cd8a6c-547c-4135-b820-7564ec16305b')"
-              title="Convert this dataframe to an interactive table."
-              style="display:none;">
-
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
-       width="24px">
-    <path d="M0 0h24v24H0V0z" fill="none"/>
-    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
-  </svg>
-      </button>
-
-  <style>
-    .colab-df-container {
-      display:flex;
-      flex-wrap:wrap;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-      <script>
-        const buttonEl =
-          document.querySelector('#df-07cd8a6c-547c-4135-b820-7564ec16305b button.colab-df-convert');
-        buttonEl.style.display =
-          google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-        async function convertToInteractive(key) {
-          const element = document.querySelector('#df-07cd8a6c-547c-4135-b820-7564ec16305b');
-          const dataTable =
-            await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                     [key], {});
-          if (!dataTable) return;
-
-          const docLinkHtml = 'Like what you see? Visit the ' +
-            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-            + ' to learn more about interactive tables.';
-          element.innerHTML = '';
-          dataTable['output_type'] = 'display_data';
-          await google.colab.output.renderOutput(dataTable, element);
-          const docLink = document.createElement('div');
-          docLink.innerHTML = docLinkHtml;
-          element.appendChild(docLink);
-        }
-      </script>
-    </div>
-  </div> -->
-
-
-
+{{< /rawhtml >}}
 
 Il est important, en particulier avec les petits jeux de données, que le modèle ne voit pas les données dans le même ordre au fur et à mesure des epochs. Pour éviter cela, on utilise l'argument `shuffle` du DataLoader.
 
